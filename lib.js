@@ -14,6 +14,21 @@
 // const sets = require('../data/sets.csv');
 // const themes = require('../data/themes.csv');
 
+// sets:
+// {
+//   "set_num": "7865-1", //inventories
+//   "name": "12V Motor",
+//   "year": 1980,
+//   "theme_id": 242, // themes
+//   "num_parts": 19
+// }
+
+// themes
+// {
+//   "id":242,
+//   "name": "test1",
+//   "parent_id": 322
+// }
 
 
 const fs = require('fs');
@@ -21,7 +36,6 @@ const papa = require('papaparse');
 const sets = fs.createReadStream('./data/sets.csv');
 var count = 0; // cache the running count
 
-const dataMock = 'set_num,name,year,theme_id,num_parts, 00-1,Weetabix Castle,1970,414,471    001-1,Gears,1965,1,43  0011-2,Town Mini-Figures,1978,84,12 0011-3,Castle 2 for 1 Bonus Offer,1987,199,2'
 
 // papa.parse(dataMock, {
 //     worker: true, // Don't bog down the main thread if its a big file

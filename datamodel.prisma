@@ -2,3 +2,43 @@ type User {
   id: ID! @unique
   name: String!
 }
+
+# type User {
+#   id: ID! @unique
+#   email: String @unique
+#   name: String!
+#   posts: [Post!]!
+# }
+
+# type Post {
+#   id: ID! @unique
+#   title: String!
+#   published: Boolean! @default(value: "false")
+#   author: User
+# }
+type Sets {
+  set_num: Int! @unique
+  name: String
+  year: Int
+  theme_id [Themes!]!
+  num_parts Int
+}
+# sets:
+# {
+#   "set_num": "7865-1", //inventories
+#   "name": "12V Motor",
+#   "year": 1980,
+#   "theme_id": 242, // themes
+#   "num_parts": 19
+# }
+type Themes {
+  id: [Sets!]!
+  name: String @unique
+  parent_id: Int
+}
+# themes
+# {
+#   "id":242,
+#   "name": "test1",
+#   "parent_id": 322
+# }

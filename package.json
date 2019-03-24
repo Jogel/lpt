@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Jogel/lpt#readme",
   "dependencies": {
+    "papaparse": "^4.6.3",
     "prisma": "^1.28.4"
   }
 }
